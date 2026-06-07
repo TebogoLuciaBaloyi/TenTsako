@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock - Multiple Time Zones</title>
+    <link rel="stylesheet" href="clock-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>World Digital Clock</h1>
+        <p class="subtitle">Current time across different time zones</p>
+
+        <div class="clocks-grid">
+            <!-- South Africa - Johannesburg -->
+            <div class="clock-card">
+                <div class="timezone-name">
+                    <span class="city">Johannesburg</span>
+                    <span class="country">South Africa</span>
+                </div>
+                <div class="digital-clock" id="clock-sa">
+                    <span class="time">00:00:00</span>
+                    <span class="period">AM</span>
+                </div>
+                <div class="timezone-offset" id="offset-sa">UTC+2</div>
+            </div>
+
+            <!-- United States - New York -->
+            <div class="clock-card">
+                <div class="timezone-name">
+                    <span class="city">New York</span>
+                    <span class="country">United States</span>
+                </div>
+                <div class="digital-clock" id="clock-ny">
+                    <span class="time">00:00:00</span>
+                    <span class="period">AM</span>
+                </div>
+                <div class="timezone-offset" id="offset-ny">UTC-5</div>
+            </div>
+
+            <!-- United Kingdom - London -->
+            <div class="clock-card">
+                <div class="timezone-name">
+                    <span class="city">London</span>
+                    <span class="country">United Kingdom</span>
+                </div>
+                <div class="digital-clock" id="clock-uk">
+                    <span class="time">00:00:00</span>
+                    <span class="period">AM</span>
+                </div>
+                <div class="timezone-offset" id="offset-uk">UTC+0</div>
+            </div>
+
+            <!-- Europe - Paris -->
+            <div class="clock-card">
+                <div class="timezone-name">
+                    <span class="city">Paris</span>
+                    <span class="country">France</span>
+                </div>
+                <div class="digital-clock" id="clock-paris">
+                    <span class="time">00:00:00</span>
+                    <span class="period">AM</span>
+                </div>
+                <div class="timezone-offset" id="offset-paris">UTC+1</div>
+            </div>
+
+            <!-- Middle East - Dubai -->
+            <div class="clock-card">
+                <div class="timezone-name">
+                    <span class="city">Dubai</span>
+                    <span class="country">United Arab Emirates</span>
+                </div>
+                <div class="digital-clock" id="clock-dubai">
+                    <span class="time">00:00:00</span>
+                    <span class="period">AM</span>
+                </div>
+                <div class="timezone-offset" id="offset-dubai">UTC+4</div>
+            </div>
+
+            <!-- Asia - India -->
+            <div class="clock-card">
+                <div class="timezone-name">
+                    <span class="city">Mumbai</span>
+                    <span class="country">India</span>
+                </div>
+                <div class="digital-clock" id="clock-india">
+                    <span class="time">00:00:00</span>
+                    <span class="period">AM</span>
+                </div>
+                <div class="timezone-offset" id="offset-india">UTC+5:30</div>
+            </div>
+
+            <!-- Asia - Singapore -->
+            <div class="clock-card">
+                <div class="timezone-name">
+                    <span class="city">Singapore</span>
+                    <span class="country">Singapore</span>
+                </div>
+                <div class="digital-clock" id="clock-singapore">
+                    <span class="time">00:00:00</span>
+                    <span class="period">AM</span>
+                </div>
+                <div class="timezone-offset" id="offset-singapore">UTC+8</div>
+            </div>
+
+            <!-- Asia - Tokyo -->
+            <div class="clock-card">
+                <div class="timezone-name">
+                    <span class="city">Tokyo</span>
+                    <span class="country">Japan</span>
+                </div>
+                <div class="digital-clock" id="clock-tokyo">
+                    <span class="time">00:00:00</span>
+                    <span class="period">AM</span>
+                </div>
+                <div class="timezone-offset" id="offset-tokyo">UTC+9</div>
+            </div>
+
+            <!-- Australia - Sydney -->
+            <div class="clock-card">
+                <div class="timezone-name">
+                    <span class="city">Sydney</span>
+                    <span class="country">Australia</span>
+                </div>
+                <div class="digital-clock" id="clock-sydney">
+                    <span class="time">00:00:00</span>
+                    <span class="period">AM</span>
+                </div>
+                <div class="timezone-offset" id="offset-sydney">UTC+10</div>
+            </div>
+
+            <!-- USA - Los Angeles -->
+            <div class="clock-card">
+                <div class="timezone-name">
+                    <span class="city">Los Angeles</span>
+                    <span class="country">United States</span>
+                </div>
+                <div class="digital-clock" id="clock-la">
+                    <span class="time">00:00:00</span>
+                    <span class="period">AM</span>
+                </div>
+                <div class="timezone-offset" id="offset-la">UTC-8</div>
+            </div>
+
+            <!-- Brazil - São Paulo -->
+            <div class="clock-card">
+                <div class="timezone-name">
+                    <span class="city">São Paulo</span>
+                    <span class="country">Brazil</span>
+                </div>
+                <div class="digital-clock" id="clock-saopaulo">
+                    <span class="time">00:00:00</span>
+                    <span class="period">AM</span>
+                </div>
+                <div class="timezone-offset" id="offset-saopaulo">UTC-3</div>
+            </div>
+        </div>
+
+        <div class="local-time-box">
+            <h2>Your Local Time</h2>
+            <div class="local-clock">
+                <span class="local-time">00:00:00</span>
+                <span class="local-date" id="local-date"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="clock-script.js"></script>
+</body>
+</html>

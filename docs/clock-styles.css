@@ -1,0 +1,337 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1a73e8;
+    --secondary-color: #fbbc04;
+    --dark-bg: #0f1419;
+    --card-bg: #1e1e2e;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --border-color: #2a2a3e;
+    --accent-color: #00d4ff;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Courier New', 'Courier', monospace;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1f3a 100%);
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(26, 115, 232, 0.3);
+    animation: glow 2s ease-in-out infinite;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(26, 115, 232, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 40px rgba(26, 115, 232, 0.6);
+    }
+}
+
+/* Clocks Grid */
+.clocks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* Clock Card */
+.clock-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.clock-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.clock-card:hover::before {
+    left: 100%;
+}
+
+.clock-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-10px);
+    box-shadow: 0 16px 48px rgba(26, 115, 232, 0.3);
+}
+
+/* Timezone Name */
+.timezone-name {
+    margin-bottom: 20px;
+}
+
+.city {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.country {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+}
+
+/* Digital Clock */
+.digital-clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.clock-card:hover .digital-clock {
+    border-color: var(--primary-color);
+    background: rgba(26, 115, 232, 0.1);
+}
+
+.time {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(26, 115, 232, 0.5);
+}
+
+.period {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    font-weight: bold;
+    padding-left: 10px;
+    border-left: 2px solid var(--border-color);
+    padding-left: 15px;
+}
+
+/* Timezone Offset */
+.timezone-offset {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    background: rgba(0, 212, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 15px;
+    border: 1px solid var(--accent-color);
+}
+
+/* Local Time Box */
+.local-time-box {
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(26, 115, 232, 0.1) 100%);
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(26, 115, 232, 0.2);
+}
+
+.local-time-box h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.local-clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.local-time {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 4px;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.local-date {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .clocks-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .clocks-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .clock-card {
+        padding: 20px;
+    }
+
+    .time {
+        font-size: 2.5rem;
+    }
+
+    .city {
+        font-size: 1.4rem;
+    }
+
+    .local-time {
+        font-size: 3rem;
+    }
+
+    .local-date {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .clock-card {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .time {
+        font-size: 2rem;
+    }
+
+    .city {
+        font-size: 1.1rem;
+    }
+
+    .country {
+        font-size: 0.8rem;
+    }
+
+    .local-time {
+        font-size: 2rem;
+    }
+
+    .local-clock {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.time {
+    animation: pulse 1s ease-in-out infinite;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
